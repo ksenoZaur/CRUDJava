@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="700.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.AppController">
+    <children>
+        <AnchorPane layoutY="80.0" prefHeight="320.0" prefWidth="700.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+            <children>
+            <TabPane fx:id="mainWindowTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Должности">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="734.0">
+                           <children>
+                              <TableView fx:id="positionTable" layoutX="14.0" layoutY="14.0" prefHeight="269.0" prefWidth="392.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="14.0" />
+                              <TabPane fx:id="subMenuTabPane" layoutX="471.0" layoutY="14.0" prefHeight="265.0" prefWidth="267.0" style="-fx-background-color: #fafafa;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                <tabs>
+                                  <Tab text="Добавление">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="newPositionNameField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="Название новой должности" AnchorPane.rightAnchor="47.0" />
+                                                <Button fx:id="addNewPositionButton" layoutX="99.0" layoutY="48.0" mnemonicParsing="false" style="-fx-background-color: #9BBE6A;" text="Добавить" textFill="#fafafa" AnchorPane.rightAnchor="99.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                  <Tab fx:id="changeTab" text="Редактирование">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="newNamePositionField" layoutX="47.0" layoutY="48.0" prefHeight="25.0" prefWidth="173.0" promptText="Новое название должности" />
+                                                <Button fx:id="changePositionButton" layoutX="75.0" layoutY="81.0" mnemonicParsing="false" onAction="#changeButtonAction" style="-fx-background-color: #9BBE6A;" text="Внести изменения" textFill="#fafafa" />
+                                                <TextField fx:id="idChangePositionField" disable="true" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Должности" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                    <Tab fx:id="removeTab" text="Удаление">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="236.0" prefWidth="253.0">
+                                             <children>
+                                                <TextField fx:id="idDelPositionField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Должности" />
+                                                <Button fx:id="removePositionButton" layoutX="104.0" layoutY="48.0" mnemonicParsing="false" onAction="#removeButtonAction" style="-fx-background-color: #9BBE6A;" text="Удалить" textFill="#fafafa" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Работники">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="734.0">
+                           <children>
+                              <TableView fx:id="employeeTable" layoutX="14.0" layoutY="14.0" prefHeight="269.0" prefWidth="392.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="14.0" />
+                              <TabPane fx:id="subMenuTabPane1" layoutX="471.0" layoutY="14.0" prefHeight="265.0" prefWidth="267.0" style="-fx-background-color: #fafafa;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <tabs>
+                                    <Tab text="Добавление">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="newEmpFirstname" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="Имя" AnchorPane.rightAnchor="47.0" />
+                                                <Button fx:id="newEmpAddButton" layoutX="106.0" layoutY="184.0" mnemonicParsing="false" onAction="#addNewEmpButtonAction" style="-fx-background-color: #9BBE6A;" text="Добавить" textFill="#fafafa" AnchorPane.rightAnchor="92.0" />
+                                                <TextField fx:id="newEmpLastname" layoutX="47.0" layoutY="48.0" prefHeight="25.0" prefWidth="173.0" promptText="Фамилия" />
+                                                <TextField fx:id="newEmpThirdname" layoutX="47.0" layoutY="82.0" prefHeight="25.0" prefWidth="173.0" promptText="Отчество" />
+                                                <ComboBox fx:id="newEmpPosition" layoutX="47.0" layoutY="150.0" prefHeight="25.0" prefWidth="173.0" promptText="Должность" />
+                                                <ComboBox fx:id="newEmpSexCombo" layoutX="47.0" layoutY="116.0" prefHeight="25.0" prefWidth="173.0" promptText="Пол" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="changeTabEmpl" text="Редактирование">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="changeEmpButton" layoutX="75.0" layoutY="218.0" mnemonicParsing="false" onAction="#cEmpButtonAction" style="-fx-background-color: #9BBE6A;" text="Внести изменения" textFill="#fafafa" />
+                                                <TextField fx:id="cEmpFNameField" layoutX="47.0" layoutY="48.0" prefHeight="25.0" prefWidth="173.0" promptText="Имя" />
+                                                <TextField fx:id="cEmpLNameField" layoutX="47.0" layoutY="82.0" prefHeight="25.0" prefWidth="173.0" promptText="Фамилия" />
+                                                <TextField fx:id="cEmpIdField" disable="true" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Работника" />
+                                                <TextField fx:id="cEmpTNameField" layoutX="47.0" layoutY="116.0" prefHeight="25.0" prefWidth="173.0" promptText="Отчество" />
+                                                <ComboBox fx:id="cEmpPositionCombo" layoutX="47.0" layoutY="150.0" prefHeight="25.0" prefWidth="173.0" promptText="Должность" />
+                                                <ComboBox fx:id="cEmpSexCombo" layoutX="47.0" layoutY="184.0" prefHeight="25.0" prefWidth="173.0" promptText="Пол" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="removeTabEmpl" text="Удаление">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="236.0" prefWidth="253.0">
+                                             <children>
+                                                <TextField fx:id="delEmpIDField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Работника" />
+                                                <Button fx:id="removeEmpButton" layoutX="104.0" layoutY="48.0" mnemonicParsing="false" onAction="#removeEmpAction" style="-fx-background-color: #9BBE6A;" text="Удалить" textFill="#fafafa" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Улицы">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="734.0">
+                           <children>
+                              <TableView fx:id="streetTable" layoutX="14.0" layoutY="14.0" prefHeight="269.0" prefWidth="392.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="14.0" />
+                              <TabPane fx:id="subMenuTabPane2" layoutX="471.0" layoutY="14.0" prefHeight="265.0" prefWidth="267.0" style="-fx-background-color: #fafafa;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <tabs>
+                                    <Tab text="Добавление">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="newStreetNameField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="Название улицы" AnchorPane.rightAnchor="47.0" />
+                                                <Button fx:id="addStreetButton" layoutX="99.0" layoutY="48.0" mnemonicParsing="false" onAction="#addStreetAction" style="-fx-background-color: #9BBE6A;" text="Добавить" textFill="#fafafa" AnchorPane.rightAnchor="99.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="changeStreetTab" text="Редактирование">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="changeStreetNameField" layoutX="47.0" layoutY="48.0" prefHeight="25.0" prefWidth="173.0" promptText="Название улицы" />
+                                                <Button fx:id="changeStreetButton" layoutX="75.0" layoutY="81.0" mnemonicParsing="false" onAction="#changeStreetAction" style="-fx-background-color: #9BBE6A;" text="Внести изменения" textFill="#fafafa" />
+                                                <TextField fx:id="changeStreetIDField" disable="true" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Улицы" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="removeStreetTab" text="Удаление">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="236.0" prefWidth="253.0">
+                                             <children>
+                                                <TextField fx:id="removeStreetIDField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Улицы" />
+                                                <Button fx:id="removeStreetButton" layoutX="104.0" layoutY="48.0" mnemonicParsing="false" onAction="#removeStreetAction" style="-fx-background-color: #9BBE6A;" text="Удалить" textFill="#fafafa" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Клиенты">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="734.0">
+                           <children>
+                              <TableView fx:id="clientTable" layoutX="14.0" layoutY="14.0" prefHeight="269.0" prefWidth="392.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="14.0" />
+                              <TabPane fx:id="subMenuTabPane11" layoutX="471.0" layoutY="14.0" prefHeight="265.0" prefWidth="267.0" style="-fx-background-color: #fafafa;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <tabs>
+                                    <Tab onSelectionChanged="#changeCLientTab" text="Добавление">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="addClientFirstameField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="Имя" AnchorPane.rightAnchor="47.0" />
+                                                <Button fx:id="addClientButton" layoutX="99.0" layoutY="252.0" mnemonicParsing="false" onAction="#addClientAction" style="-fx-background-color: #9BBE6A;" text="Добавить" textFill="#fafafa" AnchorPane.rightAnchor="99.0" />
+                                                <TextField fx:id="addClientLastnameField" layoutX="47.0" layoutY="48.0" prefHeight="25.0" prefWidth="173.0" promptText="Фамилия" />
+                                                <TextField fx:id="addClientThirdnameField" layoutX="47.0" layoutY="82.0" prefHeight="25.0" prefWidth="173.0" promptText="Отчество" />
+                                                <ComboBox fx:id="addClientSexCombo" layoutX="47.0" layoutY="116.0" prefHeight="25.0" prefWidth="173.0" promptText="Пол" />
+                                                <TextField fx:id="addClientEmailField" layoutX="47.0" layoutY="150.0" prefHeight="25.0" prefWidth="173.0" promptText="Email" />
+                                                <TextField fx:id="addClientPhoneField" layoutX="47.0" layoutY="184.0" prefHeight="25.0" prefWidth="173.0" promptText="Номер телефона" />
+                                                <DatePicker fx:id="addClientBirthdayDate" editable="=false" layoutX="47.0" layoutY="218.0" prefWidth="173.0" promptText="Дата рождения" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="changeTabClient" onSelectionChanged="#changeCLientTab" text="Редактирование">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="changeClientButton" layoutX="75.0" layoutY="284.0" mnemonicParsing="false" onAction="#changeClientAction" style="-fx-background-color: #9BBE6A;" text="Внести изменения" textFill="#fafafa" />
+                                                <TextField fx:id="changeClientFirstameField" layoutX="47.0" layoutY="48.0" prefHeight="25.0" prefWidth="173.0" promptText="Имя" />
+                                                <TextField fx:id="changeClientLastnameField" layoutX="47.0" layoutY="82.0" prefHeight="25.0" prefWidth="173.0" promptText="Фамилия" />
+                                                <TextField fx:id="changeClientID" disable="true" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Работника" />
+                                                <TextField fx:id="changeClientThirdnameField" layoutX="47.0" layoutY="116.0" prefHeight="25.0" prefWidth="173.0" promptText="Отчество" />
+                                                <ComboBox fx:id="changeClientSexCombo" layoutX="47.0" layoutY="150.0" prefHeight="25.0" prefWidth="173.0" promptText="Пол" />
+                                                <TextField fx:id="changeClientEmailField" layoutX="47.0" layoutY="184.0" prefHeight="25.0" prefWidth="173.0" promptText="Email" />
+                                                <TextField fx:id="changeClientPhoneField" layoutX="47.0" layoutY="217.0" prefHeight="25.0" prefWidth="173.0" promptText="Номер телефона" />
+                                                <DatePicker fx:id="changeClientBirthdayDate" editable="false" layoutX="47.0" layoutY="250.0" prefWidth="173.0" promptText="Дата рождения" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="removeTabClient" onSelectionChanged="#changeCLientTab" text="Удаление">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="236.0" prefWidth="253.0">
+                                             <children>
+                                                <TextField fx:id="delClientIDField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Клиента" />
+                                                <Button fx:id="removeClientButton" layoutX="104.0" layoutY="48.0" mnemonicParsing="false" onAction="#removeClientAction" style="-fx-background-color: #9BBE6A;" text="Удалить" textFill="#fafafa" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Контракты">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="734.0">
+                           <children>
+                              <TableView fx:id="contractTable" layoutX="14.0" layoutY="14.0" prefHeight="269.0" prefWidth="392.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="14.0" />
+                              <TabPane fx:id="subMenuTabPane111" layoutX="471.0" layoutY="14.0" prefHeight="265.0" prefWidth="267.0" style="-fx-background-color: #fafafa;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <tabs>
+                                    <Tab fx:id="addTabContract" onSelectionChanged="#changeContractTab" text="Добавление">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="addContractNumberField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="Номер" AnchorPane.rightAnchor="47.0" />
+                                                <Button fx:id="addContractButton" layoutX="99.0" layoutY="252.0" mnemonicParsing="false" onAction="#addContrctAction" style="-fx-background-color: #9BBE6A;" text="Добавить" textFill="#fafafa" AnchorPane.rightAnchor="99.0" />
+                                                <DatePicker fx:id="addContractStartDate" editable="false" layoutX="47.0" layoutY="48.0" prefWidth="173.0" promptText="Дата начала аренды" />
+                                                <DatePicker fx:id="addContractEndDate" editable="false" layoutX="47.0" layoutY="81.0" prefWidth="173.0" promptText="Дата окончания аренды" />
+                                                <ComboBox fx:id="addContractEmployeeCombo" layoutX="47.0" layoutY="116.0" prefHeight="25.0" prefWidth="173.0" promptText="Сотрудник" />
+                                                <ComboBox fx:id="addContractClientCombo" layoutX="47.0" layoutY="150.0" prefHeight="25.0" prefWidth="173.0" promptText="Клиент" />
+                                                <TextField fx:id="addContractPriceField" layoutX="47.0" layoutY="184.0" prefHeight="25.0" prefWidth="173.0" promptText="Общая стоимость" />
+                                                <DatePicker fx:id="addContractDateOfConc" editable="false" layoutX="47.0" layoutY="218.0" prefWidth="173.0" promptText="Дата заключения" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="changeTabContract" onSelectionChanged="#changeContractTab" text="Редактирование">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="changeContractButton" layoutX="75.0" layoutY="284.0" mnemonicParsing="false" onAction="#changeContrctAction" style="-fx-background-color: #9BBE6A;" text="Внести изменения" textFill="#fafafa" />
+                                                <TextField fx:id="changeContractNumberField" layoutX="47.0" layoutY="48.0" prefHeight="25.0" prefWidth="173.0" promptText="Номер" />
+                                                <TextField fx:id="changeContractID" disable="true" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Контракта" />
+                                                <ComboBox fx:id="changeContractEmployeeCombo" layoutX="47.0" layoutY="150.0" prefHeight="25.0" prefWidth="173.0" promptText="Сотрудник" />
+                                                <TextField fx:id="changeContractPriceField" layoutX="47.0" layoutY="217.0" prefHeight="25.0" prefWidth="173.0" promptText="Общая стоимость" />
+                                                <DatePicker fx:id="changeContractDateOfConc" editable="false" layoutX="47.0" layoutY="250.0" prefWidth="173.0" promptText="Дата заключения" />
+                                                <DatePicker fx:id="changeContractStartDate" editable="false" layoutX="47.0" layoutY="82.0" prefWidth="173.0" promptText="Дата начала аренды" />
+                                                <DatePicker fx:id="changeContractEndDate" editable="false" layoutX="47.0" layoutY="116.0" prefWidth="173.0" promptText="Дата окончания аренды" />
+                                                <ComboBox fx:id="changeContractClientCombo" layoutX="47.0" layoutY="183.0" prefHeight="25.0" prefWidth="173.0" promptText="Клиент" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="removeTabContract" onSelectionChanged="#changeContractTab" text="Удаление">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="236.0" prefWidth="253.0">
+                                             <children>
+                                                <TextField fx:id="delClontractIDField" layoutX="47.0" layoutY="14.0" prefHeight="25.0" prefWidth="173.0" promptText="ID Контракта" />
+                                                <Button fx:id="removeContractButton" layoutX="104.0" layoutY="48.0" mnemonicParsing="false" onAction="#removeContrctAction" style="-fx-background-color: #9BBE6A;" text="Удалить" textFill="#fafafa" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            </children>
+        </AnchorPane>
+        <Label layoutX="23.0" layoutY="10.0" text="Рекламное агентство" textFill="#fafafa">
+            <font>
+                <Font name="Palatino Linotype" size="46.0" />
+            </font>
+        </Label>
+        <Button fx:id="closeButton" layoutX="579.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="25.0" prefWidth="107.0" style="-fx-background-color: #E24646;" text="Закрыть" textFill="#fafafa" AnchorPane.rightAnchor="14.0">
+            <font>
+                <Font name="Palatino Linotype Bold" size="12.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

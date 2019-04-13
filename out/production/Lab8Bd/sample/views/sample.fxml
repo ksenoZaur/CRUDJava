@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#enter" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Controller">
+   <children>
+      <AnchorPane layoutY="80.0" prefHeight="320.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
+         <children>
+            <TextField fx:id="loginField" layoutX="196.0" layoutY="95.0" prefHeight="25.0" prefWidth="309.0" promptText="Логин" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordField" layoutX="196.0" layoutY="153.0" prefHeight="25.0" prefWidth="309.0" promptText="Пароль" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="234.0" layoutY="27.0" prefHeight="48.0" prefWidth="233.0" text="Авторизация" textFill="#000000ad">
+               <font>
+                  <Font name="Palatino Linotype" size="37.0" />
+               </font>
+            </Label>
+            <Button fx:id="authButton" layoutX="292.0" layoutY="221.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="117.0" style="-fx-background-color: #2E3348;" text="Войти" textFill="#fafafa">
+               <font>
+                  <Font name="Palatino Linotype Bold" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="23.0" layoutY="10.0" text="Рекламное агентство" textFill="#fafafa">
+         <font>
+            <Font name="Palatino Linotype" size="46.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="579.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="25.0" prefWidth="107.0" style="-fx-background-color: #E24646;" text="Закрыть" textFill="#fafafa">
+         <font>
+            <Font name="Palatino Linotype Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="loginSignUpButton" layoutX="579.0" layoutY="43.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="107.0" style="-fx-background-color: #9BBE6A;" text="Регистрация" textFill="#fafafa">
+         <font>
+            <Font name="Palatino Linotype Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
